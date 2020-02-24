@@ -47,8 +47,8 @@ def read_input(filename):
 
     library_counter = 0
     libraries = []
-    for line in range(int(LIBRARY_NB)):
-      N_nb_of_book, T_sign_up_process_days, M_nb_shiped_per_day = input_file.readline().split(' ')
+    for line in range(LIBRARY_NB):
+      N_nb_of_book, T_sign_up_process_days, M_nb_shiped_per_day = [int(v) for v in input_file.readline().split(' ')]
       book_collection = [Book(int(v), BOOKS[int(v)]) for v in input_file.readline().split(' ')]
 
       this_library = Library(library_counter, N_nb_of_book, T_sign_up_process_days, M_nb_shiped_per_day, book_collection)
